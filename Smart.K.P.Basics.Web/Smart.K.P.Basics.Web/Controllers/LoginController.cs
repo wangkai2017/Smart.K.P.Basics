@@ -52,7 +52,7 @@ namespace Smart.K.P.Basics.Web.Controllers
 
             if (user == null || user.Id <= 0)
             {
-                return View(user);
+                return RedirectToAction("Index",entity);
             }
 
             //生成token
