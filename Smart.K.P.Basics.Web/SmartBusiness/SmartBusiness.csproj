@@ -44,6 +44,10 @@
     <Compile Include="UsersBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Chloe.MySql\Chloe.MySql.csproj">
+      <Project>{D2F4970B-35BA-4855-BEFA-75ADB44BC196}</Project>
+      <Name>Chloe.MySql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Chloe.SqlServer\Chloe.SqlServer.csproj">
       <Project>{C77E3E54-36CF-4AE9-BAD7-6C5C524FFFCF}</Project>
       <Name>Chloe.SqlServer</Name>

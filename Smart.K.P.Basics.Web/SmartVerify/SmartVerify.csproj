@@ -59,6 +59,10 @@
       <Project>{9DF39A9A-7627-4F24-9177-EA13E2D6C598}</Project>
       <Name>SmartCommon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SmartExternalEntity\SmartExternalEntity.csproj">
+      <Project>{D8CB2E75-4637-439B-996D-8147995F9F7B}</Project>
+      <Name>SmartExternalEntity</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="说明.txt" />

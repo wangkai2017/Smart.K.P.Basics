@@ -14,9 +14,6 @@ namespace SmartVerify
 {
     public class UserHelper: SingleTon<UserHelper>
     {
-        /// <summary>项目代码</summary>
-        public string Projcode = ConfigurationManager.AppSettings["ProjectKey"];
-
         public UserInfo GetUser()
         {
             var token = GetUserToken();
@@ -79,11 +76,18 @@ namespace SmartVerify
             token = HttpContext.Current.Request[SmartConstArgs.Token];
             return token;
         }
-        public void CacheUser(string value,UserInfo user)
+        public void CacheUser(string token,UserInfo userInfo,bool isRemeber)
         {
-            CookieHelper.SetCookie(SmartConstArgs.UserToken, value);
-            HttpContext.Current.Session.Remove(value);
-            HttpContext.Current.Session.Add(value, user);
+            CookieHelper.SetCookie(SmartConstArgs.UserToken,token);
+            var session = HttpContext.Current.Session;
+            session.Remove(token);
+
+            session.Add(token, userInfo);
+            if (isRemeber == true)
+            {
+                session.Timeout = 60 * 24 * 7;
+             }
+            
         }
     }
 }

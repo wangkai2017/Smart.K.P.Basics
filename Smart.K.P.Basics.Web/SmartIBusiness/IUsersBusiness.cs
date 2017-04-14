@@ -9,7 +9,7 @@ namespace SmartIBusiness
 {
     public interface IUsersBusiness
     {
-        int AddUser(T_Users user);
+        T_Users AddUser(T_Users user);
         int DelUser(int id);
         int DelUser(T_Users user);
         int UpdateUser(T_Users user);

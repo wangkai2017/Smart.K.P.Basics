@@ -13,6 +13,7 @@ namespace SmartCommon.DbHelper
     public class DbHelper
     {
         public static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        public static readonly string MySqlConnStr = ConfigurationManager.ConnectionStrings["mySqlConnStr"].ConnectionString;
 
         public static DbConnection CreateConnection()
         {

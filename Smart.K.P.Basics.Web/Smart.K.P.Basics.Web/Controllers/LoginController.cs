@@ -54,7 +54,7 @@ namespace Smart.K.P.Basics.Web.Controllers
             {
                 return View(user);
             }
-            
+
             //生成token
             var token = EncryptionAndDecryptHelper.EncryptString(user.Id + "_" + ConvertHelper.ToISO8601DateString(DateTime.Now));
             var userInfo = new UserInfo()
@@ -63,7 +63,8 @@ namespace Smart.K.P.Basics.Web.Controllers
                 UserName = user.UserName,
                 Token = token
             };
-            UserHelper.Instance.CacheUser(token,userInfo);
+
+            UserHelper.Instance.CacheUser(token, userInfo, entity.IsRemeberPwd);
 
             if (string.IsNullOrEmpty(entity.ReturnUrl) == false)
             {
@@ -76,7 +77,7 @@ namespace Smart.K.P.Basics.Web.Controllers
 
         }
 
-
+        [HttpPost]
         public ActionResult LoginOut()
         {
             UserHelper.Instance.SignOut();

@@ -9,5 +9,6 @@ namespace SmartCommon.ConstHelper
     public class DatabaseNameConst
     {
         public const string DBTest = "DBTest";
+        public const string MySqlTest = "mysqltest";
     }
 }
