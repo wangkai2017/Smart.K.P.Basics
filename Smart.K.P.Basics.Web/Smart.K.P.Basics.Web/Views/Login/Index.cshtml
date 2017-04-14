@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model SmartExternalEntity.RequestEntity.LoginRequestEntity
+
+<div class="container">
+    @using (Html.BeginForm("LoginIn", "Login", FormMethod.Post, new { }))
+    {
+        <div class="form form-horizontal">
+            <div class="form-group">
+                <label class="col-xs-3 control-label"><i class="fa fa-asterisk required"></i>UserName</label>
+                <div class="col-xs-5">
+                    @Html.TextBoxFor(p => p.LoginUserName, new { @class = "form-control required" })
+                </div>
+                <label class="col-xs-4 help-inline J_ValidateMsg"></label>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label"><i class="fa fa-asterisk required"></i>Email</label>
+                <div class="col-xs-5">
+                    @Html.PasswordFor(p => p.LoginPwd, new { @class = "form-control required" })
+                </div>
+                <label class="col-xs-4 help-inline J_ValidateMsg"></label>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label"><i class="fa fa-asterisk required"></i>Address</label>
+                <div class="col-xs-5">
+                    @Html.CheckBoxFor(p => p.IsRemeberPwd, new { @class = "form-control required" })
+                </div>
+                <label class="col-xs-4 help-inline J_ValidateMsg"></label>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-xs-9 col-xs-offset-3">
+                    <button type="submit" value="登录" class="btn blue"><i class="fa fa-plus"></i>&nbsp;登录</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
