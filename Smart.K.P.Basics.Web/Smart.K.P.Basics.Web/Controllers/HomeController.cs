@@ -13,12 +13,12 @@ namespace Smart.K.P.Basics.Web.Controllers
     public class HomeController : BaseController
     {
         public ActionResult Index()
-        {
+        {            
             IUsersBusiness userBusiness = new UsersBusiness();
 
             var list = userBusiness.GetUserList();
             var str = SerializerHelper.ObjectToJson(list);
-
+            
 
             //var obj = LocalCacheHelper.GetCache("key");
             //LocalCacheHelper.SetCache("key", "value", TimeSpan.FromMinutes(10));
