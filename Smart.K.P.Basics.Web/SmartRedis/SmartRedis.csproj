@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{38C2FEAC-85BC-489A-BABB-B474CEE9024A}</ProjectGuid>
+    <ProjectGuid>{6558812F-279A-4177-9B64-27E49D2B4C60}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartCache</RootNamespace>
-    <AssemblyName>SmartCache</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>SmartRedis</RootNamespace>
+    <AssemblyName>SmartRedis</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,9 +31,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\packages\ServiceStack.Common.3.9.70\lib\net35\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\packages\ServiceStack.Common.3.9.70\lib\net35\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\packages\ServiceStack.Redis.3.9.70\lib\net35\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.3.9.70\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,23 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CookieHelper.cs" />
-    <Compile Include="LocalCacheHelper.cs" />
+    <Compile Include="HashOperator.cs" />
+    <Compile Include="ListOperator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RedisCacheHelper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="说明.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SmartCommon\SmartCommon.csproj">
-      <Project>{9df39a9a-7627-4f24-9177-ea13e2d6c598}</Project>
-      <Name>SmartCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SmartRedis\SmartRedis.csproj">
-      <Project>{6558812f-279a-4177-9b64-27e49d2b4c60}</Project>
-      <Name>SmartRedis</Name>
-    </ProjectReference>
+    <Compile Include="RedisConfigInfo.cs" />
+    <Compile Include="RedisManager.cs" />
+    <Compile Include="RedisOperatorBase.cs" />
+    <Compile Include="StringOperator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

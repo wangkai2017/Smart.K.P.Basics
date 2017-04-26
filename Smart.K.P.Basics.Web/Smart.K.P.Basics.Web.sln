@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVerify", "SmartVerify\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chloe.SqlServer", "Chloe.SqlServer\Chloe.SqlServer.csproj", "{C77E3E54-36CF-4AE9-BAD7-6C5C524FFFCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartRedis", "SmartRedis\SmartRedis.csproj", "{6558812F-279A-4177-9B64-27E49D2B4C60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{C77E3E54-36CF-4AE9-BAD7-6C5C524FFFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C77E3E54-36CF-4AE9-BAD7-6C5C524FFFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C77E3E54-36CF-4AE9-BAD7-6C5C524FFFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6558812F-279A-4177-9B64-27E49D2B4C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6558812F-279A-4177-9B64-27E49D2B4C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6558812F-279A-4177-9B64-27E49D2B4C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6558812F-279A-4177-9B64-27E49D2B4C60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
